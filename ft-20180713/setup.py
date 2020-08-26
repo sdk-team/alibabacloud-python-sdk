@@ -39,7 +39,7 @@ URL = "https://github.com/aliyun/alibabacloud-sdk"
 
 TOPDIR = os.path.dirname(__file__) or "."
 VERSION = __import__(PACKAGE).__version__
-REQUIRES = ["alibabacloud_tea_util==0.1.2","alibabacloud_tea_rpc==0.0.4","alibabacloud_endpoint_util==0.0.2"]
+REQUIRES = ["alibabacloud_tea_util==0.2.0","alibabacloud_tea_rpc==0.0.4","alibabacloud_endpoint_util==0.0.2"]
 
 if sys.version_info[0] == 2:
     with open("README.md") as fp:
