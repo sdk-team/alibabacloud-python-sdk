@@ -24,23 +24,6 @@ class TestFlowStrategy01Request(TeaModel):
         return self
 
 
-class TestFlowStrategy01ShrinkRequest(TeaModel):
-    def __init__(self, names_shrink=None):
-        self.names_shrink = names_shrink  # type: str
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        result = {}
-        result['Names'] = self.names_shrink
-        return result
-
-    def from_map(self, map={}):
-        self.names_shrink = map.get('Names')
-        return self
-
-
 class TestFlowStrategy01Response(TeaModel):
     def __init__(self, request_id=None, list=None, names=None):
         self.request_id = request_id    # type: str
@@ -88,33 +71,6 @@ class TestHttpApiRequest(TeaModel):
         self.string_value = map.get('StringValue')
         self.default_value = map.get('DefaultValue')
         self.other_param = map.get('OtherParam')
-        self.boolean_param = map.get('BooleanParam')
-        return self
-
-
-class TestHttpApiShrinkRequest(TeaModel):
-    def __init__(self, string_value_shrink=None, default_value_shrink=None, other_param_shrink=None,
-                 boolean_param=None):
-        self.string_value_shrink = string_value_shrink  # type: str
-        self.default_value_shrink = default_value_shrink  # type: str
-        self.other_param_shrink = other_param_shrink  # type: str
-        self.boolean_param = boolean_param  # type: bool
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        result = {}
-        result['StringValue'] = self.string_value_shrink
-        result['DefaultValue'] = self.default_value_shrink
-        result['OtherParam'] = self.other_param_shrink
-        result['BooleanParam'] = self.boolean_param
-        return result
-
-    def from_map(self, map={}):
-        self.string_value_shrink = map.get('StringValue')
-        self.default_value_shrink = map.get('DefaultValue')
-        self.other_param_shrink = map.get('OtherParam')
         self.boolean_param = map.get('BooleanParam')
         return self
 
@@ -548,7 +504,8 @@ class FtParamListRequestDisk(TeaModel):
         self.type = type                # type: List[str]
 
     def validate(self):
-        pass
+        self.validate_required(self.size, 'size')
+        self.validate_required(self.type, 'type')
 
     def to_map(self):
         result = {}

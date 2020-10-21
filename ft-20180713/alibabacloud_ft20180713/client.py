@@ -3,7 +3,6 @@
 from alibabacloud_tea_rpc.client import Client as RPCClient
 from alibabacloud_ft20180713 import models as ft_20180713_models
 from alibabacloud_tea_util.client import Client as UtilClient
-from alibabacloud_rpc_util.client import Client as RPCUtilClient
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_endpoint_util.client import Client as EndpointUtilClient
 
@@ -63,28 +62,16 @@ class Client(RPCClient):
         self.check_config(config)
         self._endpoint = self.get_endpoint("ft", self._region_id, self._endpoint_rule, self._network, self._suffix, self._endpoint_map, self._endpoint)
 
-    def test_flow_strategy_01with_options(self, tmp, runtime):
-        UtilClient.validate_model(tmp)
-        request = ft_20180713_models.TestFlowStrategy01ShrinkRequest()
-        RPCUtilClient.convert(tmp, request)
-        if not UtilClient.is_unset(tmp.names):
-            request.names_shrink = UtilClient.to_jsonstring(tmp.names)
+    def test_flow_strategy_01with_options(self, request, runtime):
+        UtilClient.validate_model(request)
         return ft_20180713_models.TestFlowStrategy01Response().from_map(self.do_request("TestFlowStrategy01", "HTTPS", "PUT", "2018-07-13", "AK", None, request.to_map(), runtime))
 
     def test_flow_strategy_01(self, request):
         runtime = util_models.RuntimeOptions()
         return self.test_flow_strategy_01with_options(request, runtime)
 
-    def test_http_api_with_options(self, tmp, runtime):
-        UtilClient.validate_model(tmp)
-        request = ft_20180713_models.TestHttpApiShrinkRequest()
-        RPCUtilClient.convert(tmp, request)
-        if not UtilClient.is_unset(tmp.string_value):
-            request.string_value_shrink = UtilClient.to_jsonstring(tmp.string_value)
-        if not UtilClient.is_unset(tmp.default_value):
-            request.default_value_shrink = UtilClient.to_jsonstring(tmp.default_value)
-        if not UtilClient.is_unset(tmp.other_param):
-            request.other_param_shrink = UtilClient.to_jsonstring(tmp.other_param)
+    def test_http_api_with_options(self, request, runtime):
+        UtilClient.validate_model(request)
         return ft_20180713_models.TestHttpApiResponse().from_map(self.do_request("TestHttpApi", "HTTPS", "POST", "2018-07-13", "AK", None, request.to_map(), runtime))
 
     def test_http_api(self, request):

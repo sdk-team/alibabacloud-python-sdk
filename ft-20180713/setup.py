@@ -36,7 +36,7 @@ DESCRIPTION = "Alibaba Cloud Ft (20180713) SDK Library for Python"
 AUTHOR = "Alibaba Cloud SDK"
 AUTHOR_EMAIL = "sdk-team@alibabacloud.com"
 URL = "https://github.com/aliyun/alibabacloud-sdk"
-REQUIRES = ["alibabacloud_tea_util>=0.1.2, <1.0.0","alibabacloud_rpc_util>=0.0.3, <1.0.0","alibabacloud_tea_rpc>=0.0.4, <1.0.0","alibabacloud_endpoint_util>=0.0.2, <1.0.0"]
+REQUIRES = ["alibabacloud_tea_util>=0.2.0, <1.0.0","alibabacloud_tea_rpc>=0.0.6, <1.0.0","alibabacloud_endpoint_util>=0.0.3, <1.0.0"]
 VERSION = __import__(PACKAGE).__version__
 
 
