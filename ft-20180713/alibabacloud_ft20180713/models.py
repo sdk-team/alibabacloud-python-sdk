@@ -16,11 +16,32 @@ class TestFlowStrategy01Request(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Names'] = self.names
+        if self.names is not None:
+            result['Names'] = self.names
         return result
 
     def from_map(self, map={}):
-        self.names = map.get('Names')
+        if map.get('Names') is not None:
+            self.names = map.get('Names')
+        return self
+
+
+class TestFlowStrategy01ShrinkRequest(TeaModel):
+    def __init__(self, names_shrink=None):
+        self.names_shrink = names_shrink  # type: str
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = {}
+        if self.names_shrink is not None:
+            result['Names'] = self.names_shrink
+        return result
+
+    def from_map(self, map={}):
+        if map.get('Names') is not None:
+            self.names_shrink = map.get('Names')
         return self
 
 
@@ -37,15 +58,21 @@ class TestFlowStrategy01Response(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['List'] = self.list
-        result['Names'] = self.names
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.list is not None:
+            result['List'] = self.list
+        if self.names is not None:
+            result['Names'] = self.names
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.list = map.get('List')
-        self.names = map.get('Names')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('List') is not None:
+            self.list = map.get('List')
+        if map.get('Names') is not None:
+            self.names = map.get('Names')
         return self
 
 
@@ -61,17 +88,60 @@ class TestHttpApiRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['StringValue'] = self.string_value
-        result['DefaultValue'] = self.default_value
-        result['OtherParam'] = self.other_param
-        result['BooleanParam'] = self.boolean_param
+        if self.string_value is not None:
+            result['StringValue'] = self.string_value
+        if self.default_value is not None:
+            result['DefaultValue'] = self.default_value
+        if self.other_param is not None:
+            result['OtherParam'] = self.other_param
+        if self.boolean_param is not None:
+            result['BooleanParam'] = self.boolean_param
         return result
 
     def from_map(self, map={}):
-        self.string_value = map.get('StringValue')
-        self.default_value = map.get('DefaultValue')
-        self.other_param = map.get('OtherParam')
-        self.boolean_param = map.get('BooleanParam')
+        if map.get('StringValue') is not None:
+            self.string_value = map.get('StringValue')
+        if map.get('DefaultValue') is not None:
+            self.default_value = map.get('DefaultValue')
+        if map.get('OtherParam') is not None:
+            self.other_param = map.get('OtherParam')
+        if map.get('BooleanParam') is not None:
+            self.boolean_param = map.get('BooleanParam')
+        return self
+
+
+class TestHttpApiShrinkRequest(TeaModel):
+    def __init__(self, string_value_shrink=None, default_value_shrink=None, other_param_shrink=None,
+                 boolean_param=None):
+        self.string_value_shrink = string_value_shrink  # type: str
+        self.default_value_shrink = default_value_shrink  # type: str
+        self.other_param_shrink = other_param_shrink  # type: str
+        self.boolean_param = boolean_param  # type: bool
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = {}
+        if self.string_value_shrink is not None:
+            result['StringValue'] = self.string_value_shrink
+        if self.default_value_shrink is not None:
+            result['DefaultValue'] = self.default_value_shrink
+        if self.other_param_shrink is not None:
+            result['OtherParam'] = self.other_param_shrink
+        if self.boolean_param is not None:
+            result['BooleanParam'] = self.boolean_param
+        return result
+
+    def from_map(self, map={}):
+        if map.get('StringValue') is not None:
+            self.string_value_shrink = map.get('StringValue')
+        if map.get('DefaultValue') is not None:
+            self.default_value_shrink = map.get('DefaultValue')
+        if map.get('OtherParam') is not None:
+            self.other_param_shrink = map.get('OtherParam')
+        if map.get('BooleanParam') is not None:
+            self.boolean_param = map.get('BooleanParam')
         return self
 
 
@@ -86,13 +156,17 @@ class TestHttpApiResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Params'] = self.params
-        result['ServiceRpcSign'] = self.service_rpc_sign
+        if self.params is not None:
+            result['Params'] = self.params
+        if self.service_rpc_sign is not None:
+            result['ServiceRpcSign'] = self.service_rpc_sign
         return result
 
     def from_map(self, map={}):
-        self.params = map.get('Params')
-        self.service_rpc_sign = map.get('ServiceRpcSign')
+        if map.get('Params') is not None:
+            self.params = map.get('Params')
+        if map.get('ServiceRpcSign') is not None:
+            self.service_rpc_sign = map.get('ServiceRpcSign')
         return self
 
 
@@ -108,17 +182,25 @@ class BatchAuditTest01Request(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
-        result['BatchAuditTest01'] = self.batch_audit_test_01
-        result['Demo01'] = self.demo_01
-        result['Test010101'] = self.test_010101
+        if self.name is not None:
+            result['Name'] = self.name
+        if self.batch_audit_test_01 is not None:
+            result['BatchAuditTest01'] = self.batch_audit_test_01
+        if self.demo_01 is not None:
+            result['Demo01'] = self.demo_01
+        if self.test_010101 is not None:
+            result['Test010101'] = self.test_010101
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
-        self.batch_audit_test_01 = map.get('BatchAuditTest01')
-        self.demo_01 = map.get('Demo01')
-        self.test_010101 = map.get('Test010101')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
+        if map.get('BatchAuditTest01') is not None:
+            self.batch_audit_test_01 = map.get('BatchAuditTest01')
+        if map.get('Demo01') is not None:
+            self.demo_01 = map.get('Demo01')
+        if map.get('Test010101') is not None:
+            self.test_010101 = map.get('Test010101')
         return self
 
 
@@ -137,22 +219,22 @@ class BatchAuditTest01Response(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
         if self.demo_01 is not None:
             result['Demo01'] = self.demo_01.to_map()
-        else:
-            result['Demo01'] = None
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         if map.get('Demo01') is not None:
             temp_model = BatchAuditTest01ResponseDemo01()
             self.demo_01 = temp_model.from_map(map['Demo01'])
-        else:
-            self.demo_01 = None
         return self
 
 
@@ -165,11 +247,13 @@ class BatchAuditTest01ResponseDemo01Demo011Demo011(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Demo0111'] = self.demo_0111
+        if self.demo_0111 is not None:
+            result['Demo0111'] = self.demo_0111
         return result
 
     def from_map(self, map={}):
-        self.demo_0111 = map.get('Demo0111')
+        if map.get('Demo0111') is not None:
+            self.demo_0111 = map.get('Demo0111')
         return self
 
 
@@ -190,8 +274,6 @@ class BatchAuditTest01ResponseDemo01Demo011(TeaModel):
         if self.demo_011 is not None:
             for k in self.demo_011:
                 result['Demo011'].append(k.to_map() if k else None)
-        else:
-            result['Demo011'] = None
         return result
 
     def from_map(self, map={}):
@@ -200,8 +282,6 @@ class BatchAuditTest01ResponseDemo01Demo011(TeaModel):
             for k in map.get('Demo011'):
                 temp_model = BatchAuditTest01ResponseDemo01Demo011Demo011()
                 self.demo_011.append(temp_model.from_map(k))
-        else:
-            self.demo_011 = None
         return self
 
 
@@ -218,16 +298,12 @@ class BatchAuditTest01ResponseDemo01(TeaModel):
         result = {}
         if self.demo_011 is not None:
             result['Demo011'] = self.demo_011.to_map()
-        else:
-            result['Demo011'] = None
         return result
 
     def from_map(self, map={}):
         if map.get('Demo011') is not None:
             temp_model = BatchAuditTest01ResponseDemo01Demo011()
             self.demo_011 = temp_model.from_map(map['Demo011'])
-        else:
-            self.demo_011 = None
         return self
 
 
@@ -240,11 +316,13 @@ class FtIpFlowControlRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -259,13 +337,17 @@ class FtIpFlowControlResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -279,13 +361,17 @@ class FtDynamicAddressDubboRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['IntValue'] = self.int_value
-        result['StringValue'] = self.string_value
+        if self.int_value is not None:
+            result['IntValue'] = self.int_value
+        if self.string_value is not None:
+            result['StringValue'] = self.string_value
         return result
 
     def from_map(self, map={}):
-        self.int_value = map.get('IntValue')
-        self.string_value = map.get('StringValue')
+        if map.get('IntValue') is not None:
+            self.int_value = map.get('IntValue')
+        if map.get('StringValue') is not None:
+            self.string_value = map.get('StringValue')
         return self
 
 
@@ -302,15 +388,21 @@ class FtDynamicAddressDubboResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['StringValue'] = self.string_value
-        result['IntValue'] = self.int_value
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.string_value is not None:
+            result['StringValue'] = self.string_value
+        if self.int_value is not None:
+            result['IntValue'] = self.int_value
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.string_value = map.get('StringValue')
-        self.int_value = map.get('IntValue')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('StringValue') is not None:
+            self.string_value = map.get('StringValue')
+        if map.get('IntValue') is not None:
+            self.int_value = map.get('IntValue')
         return self
 
 
@@ -338,11 +430,13 @@ class FtDynamicAddressHsfResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
         return self
 
 
@@ -355,11 +449,13 @@ class FtFlowSpecialRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -374,13 +470,17 @@ class FtFlowSpecialResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -393,11 +493,13 @@ class FTApiAliasApiRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -412,13 +514,17 @@ class FTApiAliasApiResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -431,11 +537,13 @@ class FtEagleEyeRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -452,15 +560,21 @@ class FtEagleEyeResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
-        result['eagleEyeTraceId'] = self.eagle_eye_trace_id
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
+        if self.eagle_eye_trace_id is not None:
+            result['eagleEyeTraceId'] = self.eagle_eye_trace_id
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
-        self.eagle_eye_trace_id = map.get('eagleEyeTraceId')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
+        if map.get('eagleEyeTraceId') is not None:
+            self.eagle_eye_trace_id = map.get('eagleEyeTraceId')
         return self
 
 
@@ -477,24 +591,22 @@ class FtParamListRequest(TeaModel):
 
     def to_map(self):
         result = {}
-        result['Name'] = self.name
+        if self.name is not None:
+            result['Name'] = self.name
         result['Disk'] = []
         if self.disk is not None:
             for k in self.disk:
                 result['Disk'].append(k.to_map() if k else None)
-        else:
-            result['Disk'] = None
         return result
 
     def from_map(self, map={}):
-        self.name = map.get('Name')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         self.disk = []
         if map.get('Disk') is not None:
             for k in map.get('Disk'):
                 temp_model = FtParamListRequestDisk()
                 self.disk.append(temp_model.from_map(k))
-        else:
-            self.disk = None
         return self
 
 
@@ -504,18 +616,21 @@ class FtParamListRequestDisk(TeaModel):
         self.type = type                # type: List[str]
 
     def validate(self):
-        self.validate_required(self.size, 'size')
-        self.validate_required(self.type, 'type')
+        pass
 
     def to_map(self):
         result = {}
-        result['Size'] = self.size
-        result['Type'] = self.type
+        if self.size is not None:
+            result['Size'] = self.size
+        if self.type is not None:
+            result['Type'] = self.type
         return result
 
     def from_map(self, map={}):
-        self.size = map.get('Size')
-        self.type = map.get('Type')
+        if map.get('Size') is not None:
+            self.size = map.get('Size')
+        if map.get('Type') is not None:
+            self.type = map.get('Type')
         return self
 
 
@@ -530,13 +645,17 @@ class FtParamListResponse(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['Name'] = self.name
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.name is not None:
+            result['Name'] = self.name
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.name = map.get('Name')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('Name') is not None:
+            self.name = map.get('Name')
         return self
 
 
@@ -549,11 +668,13 @@ class FtGatedLaunchPolicy4Request(TeaModel):
 
     def to_map(self):
         result = {}
-        result['IsGatedLaunch'] = self.is_gated_launch
+        if self.is_gated_launch is not None:
+            result['IsGatedLaunch'] = self.is_gated_launch
         return result
 
     def from_map(self, map={}):
-        self.is_gated_launch = map.get('IsGatedLaunch')
+        if map.get('IsGatedLaunch') is not None:
+            self.is_gated_launch = map.get('IsGatedLaunch')
         return self
 
 
@@ -568,11 +689,15 @@ class FtGatedLaunchPolicy4Response(TeaModel):
 
     def to_map(self):
         result = {}
-        result['RequestId'] = self.request_id
-        result['IsGatedLaunch'] = self.is_gated_launch
+        if self.request_id is not None:
+            result['RequestId'] = self.request_id
+        if self.is_gated_launch is not None:
+            result['IsGatedLaunch'] = self.is_gated_launch
         return result
 
     def from_map(self, map={}):
-        self.request_id = map.get('RequestId')
-        self.is_gated_launch = map.get('IsGatedLaunch')
+        if map.get('RequestId') is not None:
+            self.request_id = map.get('RequestId')
+        if map.get('IsGatedLaunch') is not None:
+            self.is_gated_launch = map.get('IsGatedLaunch')
         return self
