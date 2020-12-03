@@ -11,8 +11,8 @@
 如未安装 `pip`, 请先至pip官网 [pip user guide](https://pip.pypa.io/en/stable/installing/ "pip User Guide") 安装pip .
 
 ```bash
-# 安装 alibabacloud_ft20180713
-pip install alibabacloud_ft20180713
+# 安装 alibabacloud_ft20180713-test
+pip install alibabacloud_ft20180713-test
 ```
 
 ## 问题

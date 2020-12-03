@@ -23,9 +23,9 @@ import os
 from setuptools import setup, find_packages
 
 """
-setup module for alibabacloud_ft20180713.
+setup module for alibabacloud_ft20180713-test.
 
-Created on 30/11/2020
+Created on 03/12/2020
 
 @author: Alibaba Cloud SDK
 """
