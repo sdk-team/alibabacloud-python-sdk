@@ -29,8 +29,8 @@ Created on 23/12/2020
 @author: Alibaba Cloud SDK
 """
 
-PACKAGE = "alibabacloud_ft20180713"
-NAME = "alibabacloud_ft20180713" or "alibabacloud-package"
+PACKAGE = "alibabacloud_ft20180713_test"
+NAME = "alibabacloud_ft20180713_test" or "alibabacloud-package"
 DESCRIPTION = "Alibaba Cloud Ft (20180713) SDK Library for Python"
 AUTHOR = "Alibaba Cloud SDK"
 AUTHOR_EMAIL = "sdk-team@alibabacloud.com"
