@@ -3,6 +3,10 @@ English | [简体中文](README-CN.md)
 
 ## Alibaba Cloud Ft SDK for Python
 
+## Requirements
+
+- Python >= 3.6
+
 ## Installation
 
 - **Install with pip**
@@ -10,13 +14,17 @@ English | [简体中文](README-CN.md)
 Python SDK uses a common package management tool named `pip`. If pip is not installed, see the [pip user guide](https://pip.pypa.io/en/stable/installing/ "pip User Guide") to install pip.
 
 ```bash
-# Install the alibabacloud_ft20180713-test
-pip install alibabacloud_ft20180713-test
+# Install the alibabacloud_ft20180713_test
+pip install alibabacloud_ft20180713_test
 ```
 
 ## Issues
 
 [Opening an Issue](https://github.com/aliyun/alibabacloud-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.
+
+## Usage
+
+[Quick Examples](https://github.com/aliyun/alibabacloud-python-sdk/blob/master/docs/0-Usage-EN.md#quick-examples)
 
 ## Changelog
 

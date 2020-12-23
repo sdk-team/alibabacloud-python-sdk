@@ -4,6 +4,10 @@
 
 ## Alibaba Cloud Ft SDK for Python
 
+## 要求
+
+- Python >= 3.6
+
 ## 安装
 
 - **使用 pip 安装(推荐)**
@@ -11,13 +15,17 @@
 如未安装 `pip`, 请先至pip官网 [pip user guide](https://pip.pypa.io/en/stable/installing/ "pip User Guide") 安装pip .
 
 ```bash
-# 安装 alibabacloud_ft20180713-test
-pip install alibabacloud_ft20180713-test
+# 安装 alibabacloud_ft20180713_test
+pip install alibabacloud_ft20180713_test
 ```
 
 ## 问题
 
-[提交 Issue](https://github.com/aliyun/alibabacloud-sdk/issues/new)，不符合指南的问题可能会立即关闭。
+[提交 Issue](https://github.com/aliyun/alibabacloud-python-sdk/issues/new)，不符合指南的问题可能会立即关闭。
+
+## 使用说明
+
+[快速使用](https://github.com/aliyun/alibabacloud-python-sdk/blob/master/docs/0-Usage-CN.md#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8)
 
 ## 发行说明
 
@@ -25,7 +33,7 @@ pip install alibabacloud_ft20180713-test
 
 ## 相关
 
-- [最新源码](https://github.com/aliyun/alibabacloud-sdk/tree/master/python)
+- [最新源码](https://github.com/aliyun/alibabacloud-python-sdk/)
 
 ## 许可证
 
