@@ -73,6 +73,56 @@ class Client(RPCClient):
         self.check_config(config)
         self._endpoint = self.get_endpoint('ft', self._region_id, self._endpoint_rule, self._network, self._suffix, self._endpoint_map, self._endpoint)
 
+    def ft_dynamic_address_http_vpc_with_options(
+        self,
+        tmp: ft_20180713_models.FtDynamicAddressHttpVpcRequest,
+        runtime: util_models.RuntimeOptions,
+    ) -> ft_20180713_models.FtDynamicAddressHttpVpcResponse:
+        UtilClient.validate_model(tmp)
+        request = ft_20180713_models.FtDynamicAddressHttpVpcShrinkRequest()
+        RPCUtilClient.convert(tmp, request)
+        if not UtilClient.is_unset(tmp.string_value):
+            request.string_value_shrink = UtilClient.to_jsonstring(tmp.string_value)
+        if not UtilClient.is_unset(tmp.default_value):
+            request.default_value_shrink = UtilClient.to_jsonstring(tmp.default_value)
+        if not UtilClient.is_unset(tmp.other_param):
+            request.other_param_shrink = UtilClient.to_jsonstring(tmp.other_param)
+        return ft_20180713_models.FtDynamicAddressHttpVpcResponse().from_map(
+            self.do_request('FtDynamicAddressHttpVpc', 'HTTPS', 'POST', '2018-07-13', 'AK', None, TeaCore.to_map(request), runtime)
+        )
+
+    async def ft_dynamic_address_http_vpc_with_options_async(
+        self,
+        tmp: ft_20180713_models.FtDynamicAddressHttpVpcRequest,
+        runtime: util_models.RuntimeOptions,
+    ) -> ft_20180713_models.FtDynamicAddressHttpVpcResponse:
+        UtilClient.validate_model(tmp)
+        request = ft_20180713_models.FtDynamicAddressHttpVpcShrinkRequest()
+        RPCUtilClient.convert(tmp, request)
+        if not UtilClient.is_unset(tmp.string_value):
+            request.string_value_shrink = UtilClient.to_jsonstring(tmp.string_value)
+        if not UtilClient.is_unset(tmp.default_value):
+            request.default_value_shrink = UtilClient.to_jsonstring(tmp.default_value)
+        if not UtilClient.is_unset(tmp.other_param):
+            request.other_param_shrink = UtilClient.to_jsonstring(tmp.other_param)
+        return ft_20180713_models.FtDynamicAddressHttpVpcResponse().from_map(
+            await self.do_request_async('FtDynamicAddressHttpVpc', 'HTTPS', 'POST', '2018-07-13', 'AK', None, TeaCore.to_map(request), runtime)
+        )
+
+    def ft_dynamic_address_http_vpc(
+        self,
+        request: ft_20180713_models.FtDynamicAddressHttpVpcRequest,
+    ) -> ft_20180713_models.FtDynamicAddressHttpVpcResponse:
+        runtime = util_models.RuntimeOptions()
+        return self.ft_dynamic_address_http_vpc_with_options(request, runtime)
+
+    async def ft_dynamic_address_http_vpc_async(
+        self,
+        request: ft_20180713_models.FtDynamicAddressHttpVpcRequest,
+    ) -> ft_20180713_models.FtDynamicAddressHttpVpcResponse:
+        runtime = util_models.RuntimeOptions()
+        return await self.ft_dynamic_address_http_vpc_with_options_async(request, runtime)
+
     def test_flow_strategy_01with_options(
         self,
         tmp: ft_20180713_models.TestFlowStrategy01Request,

@@ -4,6 +4,130 @@ from Tea.model import TeaModel
 from typing import Dict, Any, List
 
 
+class FtDynamicAddressHttpVpcRequest(TeaModel):
+    def __init__(
+        self,
+        string_value: Dict[str, Any] = None,
+        default_value: Dict[str, Any] = None,
+        other_param: Dict[str, Any] = None,
+        boolean_param: bool = None,
+        p_1: str = None,
+    ):
+        self.string_value = string_value
+        self.default_value = default_value
+        self.other_param = other_param
+        self.boolean_param = boolean_param
+        self.p_1 = p_1
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.string_value is not None:
+            result['StringValue'] = self.string_value
+        if self.default_value is not None:
+            result['DefaultValue'] = self.default_value
+        if self.other_param is not None:
+            result['OtherParam'] = self.other_param
+        if self.boolean_param is not None:
+            result['BooleanParam'] = self.boolean_param
+        if self.p_1 is not None:
+            result['P1'] = self.p_1
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('StringValue') is not None:
+            self.string_value = m.get('StringValue')
+        if m.get('DefaultValue') is not None:
+            self.default_value = m.get('DefaultValue')
+        if m.get('OtherParam') is not None:
+            self.other_param = m.get('OtherParam')
+        if m.get('BooleanParam') is not None:
+            self.boolean_param = m.get('BooleanParam')
+        if m.get('P1') is not None:
+            self.p_1 = m.get('P1')
+        return self
+
+
+class FtDynamicAddressHttpVpcShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        string_value_shrink: str = None,
+        default_value_shrink: str = None,
+        other_param_shrink: str = None,
+        boolean_param: bool = None,
+        p_1: str = None,
+    ):
+        self.string_value_shrink = string_value_shrink
+        self.default_value_shrink = default_value_shrink
+        self.other_param_shrink = other_param_shrink
+        self.boolean_param = boolean_param
+        self.p_1 = p_1
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        result = dict()
+        if self.string_value_shrink is not None:
+            result['StringValue'] = self.string_value_shrink
+        if self.default_value_shrink is not None:
+            result['DefaultValue'] = self.default_value_shrink
+        if self.other_param_shrink is not None:
+            result['OtherParam'] = self.other_param_shrink
+        if self.boolean_param is not None:
+            result['BooleanParam'] = self.boolean_param
+        if self.p_1 is not None:
+            result['P1'] = self.p_1
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('StringValue') is not None:
+            self.string_value_shrink = m.get('StringValue')
+        if m.get('DefaultValue') is not None:
+            self.default_value_shrink = m.get('DefaultValue')
+        if m.get('OtherParam') is not None:
+            self.other_param_shrink = m.get('OtherParam')
+        if m.get('BooleanParam') is not None:
+            self.boolean_param = m.get('BooleanParam')
+        if m.get('P1') is not None:
+            self.p_1 = m.get('P1')
+        return self
+
+
+class FtDynamicAddressHttpVpcResponse(TeaModel):
+    def __init__(
+        self,
+        params: str = None,
+        service_rpc_sign: str = None,
+    ):
+        self.params = params
+        self.service_rpc_sign = service_rpc_sign
+
+    def validate(self):
+        self.validate_required(self.params, 'params')
+        self.validate_required(self.service_rpc_sign, 'service_rpc_sign')
+
+    def to_map(self):
+        result = dict()
+        if self.params is not None:
+            result['Params'] = self.params
+        if self.service_rpc_sign is not None:
+            result['ServiceRpcSign'] = self.service_rpc_sign
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('Params') is not None:
+            self.params = m.get('Params')
+        if m.get('ServiceRpcSign') is not None:
+            self.service_rpc_sign = m.get('ServiceRpcSign')
+        return self
+
+
 class TestFlowStrategy01Request(TeaModel):
     def __init__(
         self,
